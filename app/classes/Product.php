@@ -6,7 +6,13 @@ namespace App\classes;
 
 class Product
 {
+    protected $file;
+    protected $imageName;
+    protected $tempPath;
+    protected $directory;
     protected $product;
+    protected $searchProduct;
+    protected $result;
     protected $products =
         [
             0   =>
@@ -132,6 +138,25 @@ class Product
 
         ];
 
+    public function __construct($post = null, $file=null)
+    {
+        if ($post)
+        {
+            $this->file         = $file;
+            $this->imageName    = $file['image']['name'];
+            $this->tempPath     = $file['image']['tmp_name'];
+            $this->directory    = 'assets/img/product-image/'.$this->imageName;
+        }
+
+    }
+
+    public function newProduct()
+    {
+        move_uploaded_file($this->tempPath, $this->directory);
+
+        return $this->directory;
+    }
+
     public function getAllProducts()
     {
         return $this->products;
@@ -150,6 +175,22 @@ class Product
         }
 
         return $this->product;
+
+    }
+    public function searchProduct($id)
+    {
+        $this->searchProduct = $this->getAllProducts();
+
+        foreach ($this->searchProduct as $product)
+        {
+            if ($product['id'] == $id)
+            {
+                $this->result = $product;
+                return $this->result;
+            }
+        }
+
+
 
     }
 

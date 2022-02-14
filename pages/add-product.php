@@ -39,13 +39,17 @@
                         </div>                      <!--Row End-->
 
                     </form>
+                    <div class="col-md-8 mx-auto">
+                        <?php echo isset($image)? "<img src=\"$image\" alt=\"\" class=\"card-img-top h-600\">" : ''; ?>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+
 </section>
 
 
 
 
-<?php include "pages/header.php"; ?>
+<?php include "pages/footer.php"; ?>

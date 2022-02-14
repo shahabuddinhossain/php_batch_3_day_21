@@ -42,11 +42,9 @@ if (isset($_GET['pages']))
 
 
     }
-    elseif ($_GET['pages']=='all-product')
+    elseif ($_GET['pages']=='upload-product')
     {
-        $product = new Product();
-        $products = $product->getAllProducts();
-        include "pages/allProducts.php";
+        include "pages/add-product.php";
     }
     elseif ($_GET['pages']=='all-user')
     {
@@ -86,5 +84,21 @@ elseif (isset($_POST['login_btn']))
     $message    =   $auth->verify();
     include "pages/login.php";
 
+}
+elseif (isset($_POST['product_btn']))
+{
+    $product = new Product($_POST, $_FILES);
+    $image = $product->newProduct();
+    include 'pages/add-product.php';
+
+
+}
+elseif (isset($_POST['search_button']))
+{
+    /*echo '<pre>';
+    print_r($_POST);*/
+    $product    = new Product();
+    $product     = $product->searchProduct($_POST['id']);
+    include "pages/searchResult.php";
 
 }
