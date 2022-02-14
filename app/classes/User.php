@@ -6,12 +6,22 @@ namespace App\classes;
 
 class User
 {
-    protected $name = 'BITM';
-    protected $city = 'Dhaka';
-
-    public function index()
+    public function getAllUser()
     {
-        echo "Institute name ".$this->name." and city is ".$this->city ;
+        return [
+            0   =>  [
+                'id'    =>1,
+                'name'  =>'Shahabuddin Khan',
+                'email' =>'admin@gmail.com',
+                'password'  => '123456'
+            ],
+            1   =>  [
+                'id'    =>2,
+                'name'  =>'Rafa Khan',
+                'email' =>'rafa@gmail.com',
+                'password'  => '111222'
+            ],
+        ];
     }
 
 }
