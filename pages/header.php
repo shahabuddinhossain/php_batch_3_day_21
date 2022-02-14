@@ -46,7 +46,6 @@
             <a href="action.php?pages=home" class="navbar-brand">SATYA</a>
             <div class="navbar-nav">
                 <li><a href="action.php?pages=home" class="nav-link">Home</a></li>
-                <li><a href="action.php?pages=all-product" class="nav-link">All Product</a></li>
                 <li><a href="action.php?pages=login" class="nav-link">login</a></li>
 
             </div>
