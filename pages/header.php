@@ -18,12 +18,12 @@
 <?php if(isset($_SESSION['id'])) { ?>
 <nav class="navbar navbar-expand-md navbar-dark bg-dark">
     <div class="container">
-        <a href="action.php?pages=home" class="navbar-brand">SATYA</a>
+        <a href="action.php?pages=home" class="navbar-brand">সত্য</a>
         <div class="navbar-nav">
             <li><a href="action.php?pages=home" class="nav-link">Home</a></li>
             <li><a href="action.php?pages=all-product" class="nav-link">All Product</a></li>
-            <li><a href="action.php?pages=all-data" class="nav-link">All User</a></li>
-            <li><a href="action.php?pages=register" class="nav-link">Upload Product</a></li>
+            <li><a href="action.php?pages=all-user" class="nav-link">All User</a></li>
+            <li><a href="action.php?pages=upload-product" class="nav-link">Upload Product</a></li>
             <li><a href="action.php?pages=login" class="nav-link"><?php echo isset($_SESSION['name'])?'':"Log In"; ?></a></li>
             <li class="dropdown" >
                 <a href="" class="nav-link dropdown-toggle" data-toggle="dropdown"> <?php echo isset($_SESSION['name'])?$_SESSION['name']:"user"; ?></a>
@@ -43,7 +43,7 @@
 
     <nav class="navbar navbar-expand-md navbar-dark bg-dark">
         <div class="container">
-            <a href="action.php?pages=home" class="navbar-brand">SATYA</a>
+            <a href="action.php?pages=home" class="navbar-brand">সত্য</a>
             <div class="navbar-nav">
                 <li><a href="action.php?pages=home" class="nav-link">Home</a></li>
                 <li><a href="action.php?pages=login" class="nav-link">login</a></li>

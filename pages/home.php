@@ -15,7 +15,7 @@
                                 <h5><?php echo isset($product['category'])? $product['category'] : ''; ?></h5>
                                 <h5><?php echo isset($product['description'])? $product['description'] : ''; ?></h5>
                                 <hr/>
-                                <a href="action.php?pages=product&&id=<?php echo isset($product['id'])? $product['id'] : ''; ?>" class="btn btn-outline-info">More Details</a>
+                                <a href="action.php?pages=productDetails&&id=<?php echo isset($product['id'])? $product['id'] : ''; ?>" class="btn btn-outline-info">More Details</a>
                             </div>
                         </div>
                     </div>

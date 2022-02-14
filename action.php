@@ -4,6 +4,7 @@ require_once 'vendor/autoload.php';
 use App\classes\Home;
 use App\classes\Product;
 use App\classes\Auth;
+use App\classes\User;
 
 
 
@@ -22,6 +23,38 @@ if (isset($_GET['pages']))
         $products = $product->getAllProducts();
         include "pages/allProducts.php";
     }
+    elseif ($_GET['pages'] == 'productDetails')
+    {
+        if (isset($_GET['id']))
+        {
+            $product = new Product();
+            $details = $product->getProductDetails($_GET['id']);
+
+            include "pages/productDetails.php";
+        }
+
+        else
+        {
+            $product = new Product();
+            $products = $product->getAllProducts();
+            include "pages/home.php";
+        }
+
+
+    }
+    elseif ($_GET['pages']=='all-product')
+    {
+        $product = new Product();
+        $products = $product->getAllProducts();
+        include "pages/allProducts.php";
+    }
+    elseif ($_GET['pages']=='all-user')
+    {
+        $user = new User();
+        $users = $user->getAllUser();
+        include "pages/allUser.php";
+    }
+
     elseif ($_GET['pages']=='login')
     {
         if (isset( $_SESSION['id']))
@@ -38,6 +71,12 @@ if (isset($_GET['pages']))
         $auth = new Auth();
         $auth->logout();
     }
+    else
+        {
+            header('Location: action.php?pages=home');
+        }
+
+
 
 }
 
