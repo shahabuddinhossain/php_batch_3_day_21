@@ -3,46 +3,34 @@
 <section class="py-5">
     <div class="container">
         <div class="row"> <!-- row Starts here-->
-            <?php foreach ($products as $product) {?>
-
-                <div class="col-md-4 mb-4">
-                    <div class="card">
-                        <img src="<?php echo isset($product['image'])? $product['image'] : ''; ?>" alt="" class="card-img-top h-350">
-                        <div class="card-body">
-                            <h3 class="card-title"><?php echo isset($product['name'])? $product['name'] : ''; ?></h3>
-                            <h4><?php echo isset($product['price'])? 'Price: '.$product['price'] : ''; ?></h4>
-                            <h5><?php echo isset($product['brand'])? $product['brand'] : ''; ?></h5>
-                            <h5><?php echo isset($product['category'])? $product['category'] : ''; ?></h5>
-                            <h5><?php echo isset($product['description'])? $product['description'] : ''; ?></h5>
-                            <hr/>
-                            <a href="action.php?pages=product&&id=<?php echo isset($product['id'])? $product['id'] : ''; ?>" class="btn btn-outline-info">More Details</a>
-                        </div>
-                    </div>
-                </div>
-
-            <?php } ?>
-            <br/>
-            <br/>
             <table class="table table-hover">
                 <thead>
                 <tr>
-                    <th scope="col">id</th>
+                    <th scope="col">ID</th>
                     <th scope="col">Image</th>
-                    <th scope="col"></th>
-                    <th scope="col">Handle</th>
+                    <th scope="col">name</th>
+                    <th scope="col">price</th>
+                    <th scope="col">Brand</th>
+                    <th scope="col">Category</th>
+                    <th scope="col">Description</th>
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                </tr>
+                <?php foreach ($products as $product) {?>
+                    <tr>
+                        <td scope="col"><?php echo isset($product['id'])? $product['id'] : ''; ?></td>
+                        <td scope="col"><img src="<?php echo isset($product['image'])? $product['image'] : ''; ?>" alt="" class="h-50"></td>
+                        <td scope="col"><?php echo isset($product['name'])? $product['name'] : ''; ?></td>
+                        <td scope="col"><?php echo isset($product['price'])? 'Price: '.$product['price'] : ''; ?></td>
+                        <td scope="col"><?php echo isset($product['brand'])? $product['brand'] : ''; ?></td>
+                        <td scope="col"><?php echo isset($product['category'])? $product['category'] : ''; ?></td>
+                        <td scope="col"><?php echo isset($product['description'])? $product['description'] : ''; ?></td>
+                    </tr>
+                <?php } ?>
                 </tbody>
             </table>
-
         </div> <!-- row Ends-->
+
     </div>  <!-- Container Ends-->
 </section>
 
