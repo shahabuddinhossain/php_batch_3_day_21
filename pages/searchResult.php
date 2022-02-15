@@ -2,19 +2,6 @@
 
 <section class="py-5">
     <div class="container">
-        <div class="row">
-            <div class="mx-auto col-md-8">
-                <form action="action.php" method="POST">
-                    <div class="input-group mb-3">
-                        <input type="text" class="form-control" name="search" required>
-                        <div class="input-group-append ">
-                            <button type="submit" class="btn-outline-success" name="search_button">Search <i class="fa fa-search"></i></button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-
-        </div>
         <div class="row"> <!-- row Starts here-->
 
                 <div class="col-md-8 mb-4 mx-auto">
